@@ -190,4 +190,49 @@ void MainWindow::on_actionUnderline_triggered()
 }
 
 
+void MainWindow::on_actionLeft_triggered()
+{
+    ui->textEdit->setAlignment(Qt::AlignLeft);
+}
+
+
+void MainWindow::on_actionRight_triggered()
+{
+    ui->textEdit->setAlignment(Qt::AlignRight);
+}
+
+
+void MainWindow::on_actionCenter_triggered()
+{
+    ui->textEdit->setAlignment(Qt::AlignCenter);
+}
+
+
+void MainWindow::on_actionJustify_triggered()
+{
+    ui->textEdit->setAlignment(Qt::AlignJustify);
+}
+
+
+void MainWindow::on_actionFont_triggered()
+{
+    bool ok;
+    QFont font = QFontDialog::getFont(&ok, this);
+    if(ok) ui->textEdit->setFont(font);
+
+}
+
+
+void MainWindow::on_actionColor_triggered()
+{
+    QColorDialog colorDialog;
+    QColor color = colorDialog.getColor();
+    ui->textEdit->setTextColor(color);
+}
+
+
+void MainWindow::on_actionAbout_triggered()
+{
+    QMessageBox::about(this, "About app", "Version 1.0, June 2023");
+}
 
